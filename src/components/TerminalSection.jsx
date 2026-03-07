@@ -4,31 +4,31 @@ import styles from './TerminalSection.module.css'
 
 const DATA = {
   whoami: {
-    name:     'Mouad',
-    title:    'Full-Stack Software Engineer',
-    school:   'ESISA',
-    year:     '3rd year of 5',
+    name: 'Mouad',
+    title: 'Full-Stack Software Engineer',
+    school: 'ESISA',
+    year: '3rd year of 5',
     location: 'Morocco 🇲🇦',
-    email:    'm.dikouk@esisa.ac.ma',
-    github:   'github.com/MouadDk',
-    linkedin: 'linkedin.com/in/mouad', 
+    email: 'm.dikouk@esisa.ac.ma',
+    github: 'github.com/MouadDk',
+    linkedin: 'linkedin.com/in/mouad',
   },
 
   skills: [
-    { name: 'Java',         level: 85, cat: 'Languages'  },
-    { name: 'Python',       level: 80, cat: 'Languages'  },
-    { name: 'C / C++',      level: 82, cat: 'Languages'  },
-    { name: 'C# / .NET',    level: 72, cat: 'Languages'  },
-    { name: 'JavaScript',   level: 78, cat: 'Languages'  },
-    { name: 'PHP',          level: 70, cat: 'Languages'  },
-    { name: 'Spring Boot',  level: 80, cat: 'Frameworks' },
-    { name: 'React',        level: 75, cat: 'Frameworks' },
-    { name: 'REST APIs',    level: 85, cat: 'Frameworks' },
-    { name: '.NET Core',    level: 70, cat: 'Frameworks' },
-    { name: 'PostgreSQL',   level: 78, cat: 'Data & AI'  },
-    { name: 'MySQL',        level: 75, cat: 'Data & AI'  },
-    { name: 'AI / ML',      level: 65, cat: 'Data & AI'  },
-    { name: 'Algorithms',   level: 82, cat: 'Data & AI'  },
+    { name: 'Java', level: 85, cat: 'Languages' },
+    { name: 'Python', level: 80, cat: 'Languages' },
+    { name: 'C / C++', level: 82, cat: 'Languages' },
+    { name: 'C# / .NET', level: 72, cat: 'Languages' },
+    { name: 'JavaScript', level: 78, cat: 'Languages' },
+    { name: 'PHP', level: 70, cat: 'Languages' },
+    { name: 'Spring Boot', level: 80, cat: 'Frameworks' },
+    { name: 'React', level: 75, cat: 'Frameworks' },
+    { name: 'REST APIs', level: 85, cat: 'Frameworks' },
+    { name: '.NET Core', level: 70, cat: 'Frameworks' },
+    { name: 'PostgreSQL', level: 78, cat: 'Data & AI' },
+    { name: 'MySQL', level: 75, cat: 'Data & AI' },
+    { name: 'AI / ML', level: 65, cat: 'Data & AI' },
+    { name: 'Algorithms', level: 82, cat: 'Data & AI' },
   ],
 
   projects: [
@@ -73,7 +73,7 @@ const DATA = {
   experience: [
     {
       period: '2024 · 1 Month',
-      company: 'Tech Company',             
+      company: 'Tech Company',
       role: 'Full-Stack Web Developer Intern',
       stack: 'PHP · MySQL · HTML/CSS',
       points: [
@@ -93,13 +93,13 @@ const DATA = {
   },
 }
 
-const ac  = (t) => `<span class="tc-a">${t}</span>`
+const ac = (t) => `<span class="tc-a">${t}</span>`
 const dim = (t) => `<span class="tc-d">${t}</span>`
-const bl  = (t) => `<span class="tc-b">${t}</span>`
-const ok  = (t) => `<span class="tc-g">${t}</span>`
-const wn  = (t) => `<span class="tc-w">${t}</span>`
-const er  = (t) => `<span class="tc-e">${t}</span>`
-const bar = (n) => ac('█'.repeat(Math.round(n/5))) + dim('░'.repeat(20 - Math.round(n/5))) + ' ' + ac(n + '%')
+const bl = (t) => `<span class="tc-b">${t}</span>`
+const ok = (t) => `<span class="tc-g">${t}</span>`
+const wn = (t) => `<span class="tc-w">${t}</span>`
+const er = (t) => `<span class="tc-e">${t}</span>`
+const bar = (n) => ac('█'.repeat(Math.round(n / 5))) + dim('░'.repeat(20 - Math.round(n / 5))) + ' ' + ac(n + '%')
 
 const CMDS = {
   help: () => [
@@ -194,7 +194,7 @@ const CMDS = {
         lines.push('  ' + dim('Period  →') + '  ' + e.period)
         lines.push('  ' + dim('Stack   →') + '  ' + ac(e.stack))
         lines.push('')
-        e.points.forEach((p, i) => lines.push('  ' + ac((i+1) + '.') + ' ' + p))
+        e.points.forEach((p, i) => lines.push('  ' + ac((i + 1) + '.') + ' ' + p))
         lines.push('')
       })
       return lines
@@ -257,7 +257,7 @@ const CMDS = {
   },
 
   github: () => {
-    window.open('https:
+    window.open('https://github.com/MouadDk')
     return [ok('  Opening ' + DATA.whoami.github + ' ...')]
   },
 
@@ -267,23 +267,23 @@ const CMDS = {
 }
 
 const ALL = [
-  'help','whoami','ls','ls skills','ls projects','ls exp','ls edu',
-  'cat project 1','cat project 2','cat project 3','cat project 4',
-  'contact','github','sudo hire mouad','clear',
+  'help', 'whoami', 'ls', 'ls skills', 'ls projects', 'ls exp', 'ls edu',
+  'cat project 1', 'cat project 2', 'cat project 3', 'cat project 4',
+  'contact', 'github', 'sudo hire mouad', 'clear',
 ]
 
 export default function TerminalSection({ hoverOn, hoverOff }) {
-  const [lines, setLines]   = useState([])   
-  const [input, setInput]   = useState('')
+  const [lines, setLines] = useState([])
+  const [input, setInput] = useState('')
   const [cmdHist, setCmdHist] = useState([])
   const [histIdx, setHistIdx] = useState(-1)
-  const [hint, setHint]     = useState('')
+  const [hint, setHint] = useState('')
   const [focused, setFocused] = useState(false)
-  const [ready, setReady]   = useState(false)
+  const [ready, setReady] = useState(false)
   const [hiring, setHiring] = useState(false)
 
-  const inputRef  = useRef(null)
-  const bodyRef   = useRef(null)
+  const inputRef = useRef(null)
+  const bodyRef = useRef(null)
 
   // ── Boot ────────────────────────────────────────────────────────
   useEffect(() => {
@@ -324,9 +324,9 @@ export default function TerminalSection({ hoverOn, hoverOff }) {
     setReady(false)
     const w = DATA.whoami
     const seq = [
-      { delay: 0,    text: '' },
-      { delay: 200,  text: ac('  [sudo] password for recruiter: ') + dim('************') },
-      { delay: 900,  text: '' },
+      { delay: 0, text: '' },
+      { delay: 200, text: ac('  [sudo] password for recruiter: ') + dim('************') },
+      { delay: 900, text: '' },
       { delay: 1100, text: dim('  Authenticating...') },
       { delay: 1900, text: ok('  ✓ Access granted') },
       { delay: 2200, text: '' },
@@ -383,7 +383,7 @@ export default function TerminalSection({ hoverOn, hoverOff }) {
     if (directFn) {
       const result = directFn()
       if (result === '__clear__') { setLines([]); return }
-      if (result === '__hire__')  { runHireSequence(); return }
+      if (result === '__hire__') { runHireSequence(); return }
       push(Array.isArray(result) ? result : [result])
       return
     }
@@ -393,7 +393,7 @@ export default function TerminalSection({ hoverOn, hoverOff }) {
     if (fn) {
       const result = fn(parts.slice(1))
       if (result === '__clear__') { setLines([]); return }
-      if (result === '__hire__')  { runHireSequence(); return }
+      if (result === '__hire__') { runHireSequence(); return }
       push(Array.isArray(result) ? result : [result])
     } else {
       push([
@@ -456,11 +456,11 @@ export default function TerminalSection({ hoverOn, hoverOff }) {
           <span className={`${styles.dot} ${styles.dotG}`} />
           <span className={styles.barTitle}>mouad@portfolio:~</span>
           <span className={`${styles.barBadge} ${hiring ? styles.barBadgeHiring : ''}`}>
-          {hiring ? '⚡ hiring...' : 'interactive'}
-        </span>
+            {hiring ? '⚡ hiring...' : 'interactive'}
+          </span>
         </div>
 
-        {}
+        { }
         <div className={styles.body} ref={bodyRef}>
           {lines.filter(Boolean).map((line, i) => (
             <div
@@ -479,7 +479,7 @@ export default function TerminalSection({ hoverOn, hoverOff }) {
             </div>
           ))}
 
-          {}
+          { }
           {ready && !hiring && (
             <div className={styles.inputRow}>
               <span className={styles.prompt}>
@@ -489,7 +489,7 @@ export default function TerminalSection({ hoverOn, hoverOff }) {
                 <span className={styles.pSym}>$</span>
               </span>
               <div className={styles.inputWrap}>
-                {}
+                { }
                 <span className={styles.ghost} aria-hidden>
                   <span style={{ visibility: 'hidden' }}>{input}</span>
                   {hint && <span className={styles.hint}>{hint}</span>}
@@ -513,11 +513,11 @@ export default function TerminalSection({ hoverOn, hoverOff }) {
             </div>
           )}
 
-          {}
+          { }
           <div id="term-bottom" />
         </div>
 
-        {}
+        { }
         <div className={styles.foot}>
           <span>Tab → autocomplete</span>
           <span>↑↓ → history</span>
