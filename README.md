@@ -2,11 +2,10 @@
 
 Welcome to my personal portfolio repository! This project showcases my skills, experience, and the software projects I've built, ranging from full-stack web applications to AI-powered games. It uses an interactive terminal-style interface built with React.
 
-![Portfolio Preview](./public/favicon.svg) <!-- You can add a real screenshot of your portfolio here later -->
 
 ## 🚀 Live Demo
 
-[Insert Link to Live Portfolio Here]
+https://portfolio-a9ji.vercel.app/#projects
 
 ## 🛠️ Built With
 
