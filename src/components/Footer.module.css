@@ -1,0 +1,15 @@
+.footer {
+  padding: 28px 52px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: .08em;
+}
+.footer em { color: var(--accent); font-style: normal; }
+
+@media (max-width: 768px) {
+  .footer { padding: 24px; flex-direction: column; gap: 10px; text-align: center; }
+}

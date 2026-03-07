@@ -1,0 +1,218 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .35s, transform .35s cubic-bezier(.16, 1, .3, 1), box-shadow .35s;
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s ease;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(200, 241, 53, .06), transparent 55%);
+  opacity: 0;
+  transition: opacity .4s;
+  pointer-events: none;
+}
+
+.card:hover {
+  border-color: rgba(200, 241, 53, .3);
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, .55);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.featured {
+  grid-column: span 2;
+  background: linear-gradient(140deg, #0e120a 0%, #0c0c0c 100%);
+  border-color: rgba(200, 241, 53, .12);
+}
+
+.num {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.arrow {
+  position: absolute;
+  top: 36px;
+  right: 36px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: var(--muted);
+  transition: all .25s cubic-bezier(.16, 1, .3, 1);
+}
+
+.card:hover .arrow {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+  transform: rotate(45deg) scale(1.1);
+  box-shadow: 0 4px 16px rgba(200, 241, 53, .4);
+}
+
+.ndaBadge {
+  position: absolute;
+  top: 36px;
+  right: 36px;
+  background: rgba(255, 107, 53, .1);
+  border: 1px solid rgba(255, 107, 53, .3);
+  color: #ff6b35;
+  border-radius: 100px;
+  padding: 4px 12px;
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.icon {
+  font-size: 42px;
+  margin-bottom: 18px;
+  display: block;
+  line-height: 1;
+  transition: transform .4s cubic-bezier(.16, 1, .3, 1);
+}
+
+.card:hover .icon {
+  transform: scale(1.05);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -.5px;
+  margin-bottom: 12px;
+}
+
+.desc {
+  color: var(--muted2);
+  font-size: 12.5px;
+  line-height: 1.85;
+  flex: 1;
+}
+
+.statsRow {
+  display: flex;
+  gap: 0;
+  margin-top: 22px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.stat {
+  flex: 1;
+  padding: 10px 14px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: rgba(200, 241, 53, .02);
+  transition: background .2s;
+}
+
+.stat:last-child {
+  border-right: none;
+}
+
+.card:hover .stat {
+  background: rgba(200, 241, 53, .04);
+}
+
+.statVal {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.statLabel {
+  font-size: 9.5px;
+  color: var(--muted);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 20px;
+}
+
+.tag {
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 1px solid rgba(200, 241, 53, .18);
+  border-radius: 100px;
+  padding: 3px 11px;
+  font-size: 9.5px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transition: background .2s, transform .2s;
+}
+
+.tag:hover {
+  background: rgba(200, 241, 53, .18);
+  transform: translateY(-2px);
+}
+
+.confidentialNote {
+  margin-top: 16px;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured {
+    grid-column: span 1;
+  }
+}

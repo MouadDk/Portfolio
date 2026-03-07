@@ -1,0 +1,33 @@
+.cursor {
+  position: fixed;
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width .2s, height .2s, background .2s;
+  mix-blend-mode: difference;
+}
+.ring {
+  position: fixed;
+  width: 36px; height: 36px;
+  border: 1px solid rgba(200,241,53,.4);
+  border-radius: 50%;
+  pointer-events: none; z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width .22s, height .22s, border-color .22s;
+}
+
+.ring::after {
+  content: '';
+  position: absolute; inset: -8px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,241,53,.15);
+  animation: pulseRing 2s ease infinite;
+}
+@keyframes pulseRing {
+  0%   { transform: scale(1); opacity: .6; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+:global(.hov).cursor { width: 5px; height: 5px; }
+:global(.hov).ring   { width: 54px; height: 54px; border-color: rgba(200,241,53,.2); }
