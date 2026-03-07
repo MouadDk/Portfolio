@@ -1,120 +1,60 @@
-# 🎯 Mon Portfolio — React + Vite
+# 👨‍💻 Mouad — Full-Stack Software Engineer Portfolio
 
-Portfolio personnel construit avec React et Vite. Aucune dépendance lourde, juste React pur.
+Welcome to my personal portfolio repository! This project showcases my skills, experience, and the software projects I've built, ranging from full-stack web applications to AI-powered games. It uses an interactive terminal-style interface built with React.
+
+![Portfolio Preview](./public/favicon.svg) <!-- You can add a real screenshot of your portfolio here later -->
+
+## 🚀 Live Demo
+
+[Insert Link to Live Portfolio Here]
+
+## 🛠️ Built With
+
+- **React** (Hooks, Context for bilingual support)
+- **Vite** (Next-generation frontend tooling)
+- **Vanilla CSS** (Custom styling, interactive animations, hardware-accelerated transitions)
+- **JavaScript (ES6+)**
+
+## 📂 Featured Projects Included
+
+- **Grab Morocco**: A full-stack ride-hailing platform built for the Moroccan market with Spring Boot, React, PostgreSQL, WebSocket (real-time driver tracking), and JWT authentication.
+- **Connect4-AI**: A playable Connect 4 engine featuring an unbeatable Minimax/Alpha-Beta pruning AI evaluation built in Python.
+- **Chess Engine**: Custom C++ OpenGL chess game with full FIDE rules and a high-performance Minimax AI reaching depth-6 in under a second.
+- **Secretariat App**: A production PHP/MySQL MVC application actively used to replace paper administrative processes.
+
+## 💻 Technical Skills
+
+*   **Languages:** Java, Python, C/C++, C#, JavaScript, PHP
+*   **Frameworks:** Spring Boot, React, .NET Core
+*   **Database:** PostgreSQL, MySQL
+*   **Other Concepts:** REST APIs, AI / ML, Pandas/NumPy, Algorithms
+
+## ⚙️ Running Locally
+
+To run this portfolio on your local machine:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/MouadDk/Portfolio.git
+   ```
+2. **Navigate to the directory:**
+   ```bash
+   cd Portfolio
+   ```
+3. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+4. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+## 📫 Get in Touch
+
+- **GitHub:** [github.com/MouadDk](https://github.com/MouadDk)
+- **LinkedIn:** [linkedin.com/in/mouad](https://linkedin.com/in/mouad) <!-- Be sure to update this with your real linkedin -->
+- **Email:** m.dikouk@esisa.ac.ma
 
 ---
-
-## 🚀 Lancer en local
-
-```bash
-# 1. Installer les dépendances
-npm install
-
-# 2. Lancer le serveur de développement
-npm run dev
-
-# 3. Ouvrir http://localhost:5173
-```
-
----
-
-## ✏️ Personnaliser le contenu
-
-**Tout le contenu est dans un seul fichier :**
-
-```
-src/data.js
-```
-
-Ouvre ce fichier et modifie :
-- `meta.name` → ton prénom et nom
-- `meta.email` → ton email
-- `meta.github` → ton GitHub
-- `meta.linkedin` → ton LinkedIn
-- `meta.school` → le nom de ton école
-- `projects[].github` → les liens vers tes repos
-- `about` → ton texte de présentation
-
----
-
-## 📁 Structure du projet
-
-```
-portfolio/
-├── src/
-│   ├── components/
-│   │   ├── Cursor.jsx / .module.css
-│   │   ├── Navbar.jsx / .module.css
-│   │   ├── Hero.jsx / .module.css
-│   │   ├── About.jsx / .module.css
-│   │   ├── Projects.jsx / .module.css
-│   │   ├── Experience.jsx / .module.css
-│   │   ├── Contact.jsx / .module.css
-│   │   ├── Footer.jsx / .module.css
-│   │   └── SectionHeader.jsx / .module.css
-│   ├── hooks/
-│   │   ├── useCursor.js
-│   │   └── useReveal.js
-│   ├── data.js        ← TOUT LE CONTENU ICI
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── index.html
-├── vite.config.js
-└── package.json
-```
-
----
-
-## 🌐 Déployer gratuitement
-
-### Option 1 — Vercel (recommandé, le plus simple)
-
-1. Va sur [vercel.com](https://vercel.com) et crée un compte gratuit
-2. Installe Vercel CLI :
-   ```bash
-   npm install -g vercel
-   ```
-3. Dans le dossier du projet :
-   ```bash
-   vercel
-   ```
-4. Suis les instructions → ton site est en ligne en 2 minutes !
-5. URL style : `ton-nom.vercel.app`
-
-### Option 2 — GitHub Pages
-
-1. Push le code sur GitHub
-2. Build le projet :
-   ```bash
-   npm run build
-   ```
-3. Dans `vite.config.js`, ajoute `base: '/nom-du-repo/'`
-4. Installe gh-pages :
-   ```bash
-   npm install --save-dev gh-pages
-   ```
-5. Dans `package.json`, ajoute dans `"scripts"` :
-   ```json
-   "deploy": "gh-pages -d dist"
-   ```
-6. Lance :
-   ```bash
-   npm run build && npm run deploy
-   ```
-7. Dans les paramètres GitHub du repo → Pages → sélectionne branche `gh-pages`
-
-### Option 3 — Netlify (drag & drop)
-
-1. `npm run build` → génère le dossier `dist/`
-2. Va sur [netlify.com/drop](https://app.netlify.com/drop)
-3. Glisse le dossier `dist/` → c'est en ligne instantanément !
-
----
-
-## 💡 Tips pour améliorer ton portfolio
-
-- Ajoute une vraie photo de profil
-- Mets les vrais liens GitHub de tes projets
-- Pour le projet NDA, ajoute des screenshots de l'interface (sans le code)
-- Achète un domaine `.ma` ou `.dev` (~10€/an) pour plus de pro
+*Built with ❤️ by Mouad.*
