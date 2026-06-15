@@ -126,6 +126,22 @@ export const projects = [
       { label: 'Status', value: 'Production' },
     ],
   },
+  {
+    id: 5,
+    num: '05',
+    featured: false,
+    icon: '📊',
+    title: 'Student Performance BI Dashboard — Power BI',
+    desc: 'Interactive Power BI solution tracking academic performance and attendance for a Master\'s program. Star-schema data model over Students / Modules / Grades / Absences, 60+ custom DAX measures, and two dashboards covering KPIs (success rate, weighted average, absenteeism, critical modules) with a Python script that auto-generates a PDF report from the model.',
+    tags: ['Power BI', 'DAX', 'Data Modeling', 'KPI', 'Python', 'Analytics'],
+    github: null,
+    demo: null,
+    stats: [
+      { label: 'DAX measures', value: '60+' },
+      { label: 'Dashboards', value: '2' },
+      { label: 'Students tracked', value: '512' },
+    ],
+  },
 ]
 
 export const experience = [
